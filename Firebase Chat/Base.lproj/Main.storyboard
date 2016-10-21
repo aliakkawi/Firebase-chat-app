@@ -1,26 +1,119 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="U6D-Cc-UdS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Chat-->
+        <scene sceneID="Lor-Tu-o0b">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="82E-68-YsV" customClass="ChatViewController" customModule="Firebase_Chat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="ira-wY-aWu"/>
+                        <viewControllerLayoutGuide type="bottom" id="rOm-ek-w3j"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="9uj-Zu-Rn8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Chat" id="Dkz-HY-BO3">
+                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="Qet-pF-5XG">
+                            <connections>
+                                <action selector="signoutTapped:" destination="82E-68-YsV" id="4uk-hJ-Who"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eQf-UF-0ok" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1800.8" y="37.331334332833585"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="0Yx-Jc-qlw">
+            <objects>
+                <viewController id="U6D-Cc-UdS" customClass="LoginViewController" customModule="Firebase_Chat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MTr-Se-OMz"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ct9-Sb-rqz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Slk-My-hpq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="RP0-Gb-jmY">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="esQ-oZ-aGC">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="5Og-Hc-Q18"/>
+                                        </constraints>
+                                        <state key="normal" title="Login Anonymously">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="loginAnonymouslyTapped:" destination="U6D-Cc-UdS" eventType="touchUpInside" id="PuD-Fb-0Vv"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OrLine" translatesAutoresizingMaskIntoConstraints="NO" id="fy8-L9-vQU">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="17" id="cb4-9w-GsE"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l14-wn-i5Z">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="SVO-qK-1vT"/>
+                                    <constraint firstAttribute="width" constant="50" id="jpT-kj-bQx"/>
+                                </constraints>
+                                <state key="normal" image="googleButton"/>
+                                <connections>
+                                    <action selector="googleSignInTapped:" destination="U6D-Cc-UdS" eventType="touchUpInside" id="gps-oO-5Y1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="l14-wn-i5Z" firstAttribute="top" secondItem="RP0-Gb-jmY" secondAttribute="bottom" constant="20" id="CBH-ls-TSK"/>
+                            <constraint firstItem="l14-wn-i5Z" firstAttribute="centerX" secondItem="Slk-My-hpq" secondAttribute="centerX" id="axS-Rt-xov"/>
+                            <constraint firstItem="RP0-Gb-jmY" firstAttribute="centerX" secondItem="Slk-My-hpq" secondAttribute="centerX" id="ba7-pe-zfJ"/>
+                            <constraint firstAttribute="trailing" secondItem="RP0-Gb-jmY" secondAttribute="trailing" constant="50" id="iaK-xw-OGR"/>
+                            <constraint firstItem="RP0-Gb-jmY" firstAttribute="leading" secondItem="Slk-My-hpq" secondAttribute="leading" constant="50" id="py3-C6-hIG"/>
+                            <constraint firstItem="RP0-Gb-jmY" firstAttribute="top" secondItem="MTr-Se-OMz" secondAttribute="bottom" constant="198" id="xSQ-E8-orI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="logInAnonymousButton" destination="esQ-oZ-aGC" id="6Am-zg-k10"/>
+                        <segue destination="IhA-Fu-3qI" kind="show" identifier="gotochat" id="JaO-x8-2fs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eWT-kc-RsN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="216.80000000000001" y="39.130434782608695"/>
+        </scene>
+        <!--Navigation View Controller-->
+        <scene sceneID="h7U-Df-tag">
+            <objects>
+                <navigationController storyboardIdentifier="chatnav" automaticallyAdjustsScrollViewInsets="NO" id="IhA-Fu-3qI" customClass="NavigationViewController" customModule="Firebase_Chat" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="kdV-mV-isA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="82E-68-YsV" kind="relationship" relationship="rootViewController" id="4uq-zc-rNS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7ww-qF-jcD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1039" y="37"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="OrLine" width="864" height="45"/>
+        <image name="googleButton" width="120" height="120"/>
+    </resources>
 </document>
